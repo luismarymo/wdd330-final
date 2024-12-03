@@ -4,7 +4,7 @@
   "description": "WDD330 Final Project - Luismary Mariño",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "build parcel src/index.html"
+    "build":  "parcel build src/index.html"
   },
   "author": "Luismary Mariño",
   "dependencies": {
