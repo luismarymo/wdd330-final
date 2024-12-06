@@ -1,0 +1,82 @@
+/* import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap');
+
+/* defaults */
+
+:root {
+    /* colors */
+    --primary-color: #3F4625;
+    --secondary-color: #606C38;
+    --background-color: #FFFDF1;
+    --accent1-color: #AA6122;
+    --accent2-color: #DDA15E;
+
+    /* fonts */
+    --heading-font: "Abril Fatface", Georgia, serif;
+    --paragraph-font: Poppins, Helvetica, sans-serif;
+
+    /* sizes */
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--paragraph-font);
+    background-color: var(--background-color);
+    font-size: var(--font-base);
+    max-width: 600px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--heading-font);
+    font-size: var(--font-base);
+    padding: .75rem 1.2rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* home page */
+
+/* carousel */
+
+/* mission */
+.mission {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* info */
+
+.info {
+    text-align: center;
+}
+
+.info img {
+    margin-top: 2rem;
+    border: 20px solid var(--accent1-color);
+    border-radius: 5px;
+}
