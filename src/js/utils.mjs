@@ -15,8 +15,8 @@ async function loadTemplate(path) {
 
 // dynamically loads the header and footer into a page
 export async function loadHeaderFooter() {
-    const header = await loadTemplate("../public/partials/header.html");
-    const footer = await loadTemplate("../public/partials/footer.html");
+    const header = await loadTemplate(new URL("../public/header/index.html", import.meta.url));
+    const footer = await loadTemplate(new URL("../public/footer/index.html", import.meta.url));
 
     const headerElement = document.querySelector("#main-header");
     const footerElement = document.querySelector("#main-footer");
