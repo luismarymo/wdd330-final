@@ -9,7 +9,6 @@ export function renderWithTemplate(template, parentElement, data, callback) {
 async function loadTemplate(path) {
     const res = await fetch(path);
     const template = await res.text();
-    console.log("Loaded template from", path, template);
     return template;
   }
 
