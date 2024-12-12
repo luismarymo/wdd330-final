@@ -12,6 +12,15 @@ async function loadTemplate(path) {
     return template;
   }
 
+// inserts a list of objects with a template as HTML into the DOM
+export function renderListWithTemplate(templateFunction, parentElement, list, position = "afterbegin", clear = false) {
+  const htmlStrings = list.map(templateFunction);
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+
 // dynamically loads the header and footer into a page
 export async function loadHeaderFooter() {
     const header = await loadTemplate(

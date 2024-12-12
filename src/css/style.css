@@ -37,6 +37,7 @@ body {
 h1, h2, h3, h4 {
     font-family: var(--heading-font);
     color: var(--primary-color);
+    padding-left: .5rem;
 }
 
 img {
@@ -52,10 +53,6 @@ button {
     background-color: var(--primary-color);
     color: var(--background-color);
     border: none;
-    border-radius: 8px;
-    font-family: var(--heading-font);
-    font-size: var(--font-base);
-    padding: .75rem 1.2rem;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -102,6 +99,13 @@ footer a {
     padding: 1rem;
 }
 
+.discover {
+    font-family: var(--heading-font);
+    font-size: var(--font-base);
+    padding: .75rem 1.2rem;
+    border-radius: 8px;
+}
+
 /* info */
 
 .info {
@@ -112,4 +116,49 @@ footer a {
     margin-top: 2rem;
     border: 20px solid var(--accent1-color);
     border-radius: 5px;
+}
+
+/* listing page */
+
+.view {
+    text-align: center;
+}
+
+.listing {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 3rem;
+}
+
+/* list view */
+.list-view .cat-card a {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 2rem 0;
+    padding: .5rem;
+    border: solid 2px var(--accent2-color);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .20);
+}
+
+/* grid view */
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.grid-view div {
+    display: none;
+}
+
+.card__info {
+    padding-left: 1rem;
+}
+
+.card__origin {
+    font-style: italic;
+    margin-top: -1rem;
+    font-size: var(--font-base);
 }
