@@ -3,7 +3,7 @@ import { renderListWithTemplate } from "./utils.mjs";
 function catCardTemplate(cat) {
     return `
     <li class="cat-card">
-        <a href=#>
+        <a href=detail.html?=${cat.id}>
             <img class="card__img" src="${cat.url}" alt="Image of ${cat.breeds[0].name}"/>
             <div class="card__info">
                 <h2 class="card__name">${cat.breeds[0].name}</h2>
@@ -21,6 +21,8 @@ export default class CatListing {
 
     async init() {
         const listing = await this.dataSource.getData(this);
+
+        localStorage.setItem("breedList", JSON.stringify(listing));
 
         this.displayCatList(listing);
         this.toggleListView();
