@@ -162,3 +162,14 @@ footer a {
     margin-top: -1rem;
     font-size: var(--font-base);
 }
+
+/* details pages */
+.detail__link {
+    font-style: italic;
+    font-size: var(--small-font);
+}
+
+.detail__link a:hover {
+    padding-right: .4rem;
+    background-color: var(--accent2-color);
+}

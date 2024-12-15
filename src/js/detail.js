@@ -1,7 +1,9 @@
 import CatDetail from "./CatDetail.mjs";
-import { loadHeaderFooter } from "./utils.mjs";
+import { getParameter, loadHeaderFooter } from "./utils.mjs";
 
-const cat = new CatDetail("0XYvRd7oD");
+const catId = getParameter("cat");
+
+const cat = new CatDetail(catId);
 
 cat.init();
 

@@ -36,3 +36,9 @@ export async function loadHeaderFooter() {
     renderWithTemplate(header, headerElement);
     renderWithTemplate(footer, footerElement);
 }
+
+// retrieves a query parameter value from the URL
+export function getParameter(parameter) {
+  const urlParameter = new URLSearchParams(window.location.search);
+  return urlParameter.get(parameter);
+}

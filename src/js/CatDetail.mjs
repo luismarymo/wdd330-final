@@ -30,9 +30,11 @@ export default class CatDetail {
         <h1>${this.cat.breeds[0].name}</h1>
         <img class="" src="${this.cat.url}" alt="Image of ${this.cat.breeds[0].name}"/>
         <h2>From ${this.cat.breeds[0].origin}</h2>
+        <p>${this.cat.breeds[0].description}
         <p>Weight: ${this.cat.breeds[0].weight.metric}Kg</p>
         <p>Personality: ${this.cat.breeds[0].temperament}</p>
         <p>Life expentacy: ${this.cat.breeds[0].life_span} years</p>
+        <p class="detail__link">More info at <a href="${this.cat.breeds[0].wikipedia_url}">${this.cat.breeds[0].name}</a></p>
         `;
     }
 }
