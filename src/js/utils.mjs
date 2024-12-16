@@ -42,3 +42,8 @@ export function getParameter(parameter) {
   const urlParameter = new URLSearchParams(window.location.search);
   return urlParameter.get(parameter);
 }
+
+// returns the index of an element in a list by their identifier
+export function getIndexFromId(list, id) {
+  return list.findIndex(element => id == element.id);
+}
