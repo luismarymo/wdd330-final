@@ -106,13 +106,16 @@ footer a {
     border-radius: 8px;
 }
 
-/* info */
+/* spotlight */
 
-.info {
+.spotlight {
     text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-.info img {
+.spotlight img {
+    max-width: 100%;
     margin-top: 2rem;
     border: 20px solid var(--accent1-color);
     border-radius: 5px;
