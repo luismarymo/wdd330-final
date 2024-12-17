@@ -1,4 +1,4 @@
-import { renderListWithTemplate } from "./utils.mjs";
+import { isInStorage, renderListWithTemplate, setStorage } from "./utils.mjs";
 
 function catCardTemplate(cat) {
     return `
@@ -20,9 +20,12 @@ export default class CatListing {
     }
 
     async init() {
-        const listing = await this.dataSource.getData(this);
+        let listing = isInStorage("breedList");
 
-        localStorage.setItem("breedList", JSON.stringify(listing));
+        if (listing.length == 0) {
+            listing = await this.dataSource.getData(this);
+            setStorage("breedList", listing);
+        }
 
         this.displayCatList(listing);
         this.toggleListView();
@@ -33,14 +36,13 @@ export default class CatListing {
     }
 
     toggleListView() {
-        document.querySelector(".view").addEventListener("click", (event) => {
-            
-            if(event.target.id == "list") {
+        document.querySelector(".view-buttons").addEventListener("click", (event) => {
+            if(event.target.id == "list" || event.target.alt == "List View Button") {
                 this.listElement.classList.add("list-view");
                 this.listElement.classList.remove("grid-view");
             }
 
-            if(event.target.id == "grid") {
+            if(event.target.id == "grid" || event.target.alt == "Grid View Button") {
                 this.listElement.classList.add("grid-view");
                 this.listElement.classList.remove("list-view");
             }

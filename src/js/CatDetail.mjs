@@ -1,16 +1,15 @@
-import { getIndexFromId } from "./utils.mjs";
+import { getIndexFromId, isInStorage, setStorage } from "./utils.mjs";
 
 export default class CatDetail {
     constructor(catId) {
         this.catId = catId;
         this.cat = {};
-        // this.dataSource = dataSource;
     }
 
     async init() {
-        const storedBreeds = JSON.parse(localStorage.getItem("breedList"));
+        const storedBreeds = isInStorage("breedList");
 
-        if (Array.isArray(storedBreeds)) {
+        if (storedBreeds.length != 0) {
             this.cat = storedBreeds.find((cat) => cat.id == this.catId);
 
             if (!this.cat) {
@@ -46,10 +45,7 @@ export default class CatDetail {
     }
 
     saveCat() {
-        let savedCats = JSON.parse(localStorage.getItem("savedCats"));
-        if (!Array.isArray(savedCats)) {
-            savedCats = [];
-        }
+        let savedCats = isInStorage("savedCats");
 
         let savedIndex = getIndexFromId(savedCats, this.catId);
 
@@ -60,6 +56,6 @@ export default class CatDetail {
             alert(`You purred to ${this.cat.breeds[0].name}! Find it in the purred cats page`);
         }
 
-        localStorage.setItem("savedCats", JSON.stringify(savedCats));
+        setStorage("savedCats", savedCats);
     }
 }

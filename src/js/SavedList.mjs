@@ -1,4 +1,4 @@
-import { getIndexFromId, renderListWithTemplate } from "./utils.mjs";
+import { getIndexFromId, isInStorage, renderListWithTemplate, setStorage } from "./utils.mjs";
 
 function savedCatTemplate(cat) {
     return `
@@ -24,11 +24,11 @@ export default class Saved {
     }
 
     getSavedCats() {
-        return JSON.parse(localStorage.getItem(this.key)) || [];
+        return isInStorage(this.key);
     }
 
     setSavedCats(cats) {
-        localStorage.setItem(this.key, JSON.stringify(cats));
+        setStorage(this.key, cats);
     }
 
     removeCat(id) {

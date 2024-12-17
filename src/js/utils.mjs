@@ -47,3 +47,18 @@ export function getParameter(parameter) {
 export function getIndexFromId(list, id) {
   return list.findIndex(element => id == element.id);
 }
+
+// checks if a JSON array exists in local storage and returns it, otherwise returns an empty array
+export function isInStorage(key) {
+  const array = JSON.parse(localStorage.getItem(key));
+  if (Array.isArray(array)) {
+    return array;
+  } else {
+    return [];
+  }
+}
+
+// saves data to local storage
+export function setStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
