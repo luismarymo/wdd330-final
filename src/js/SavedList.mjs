@@ -4,11 +4,11 @@ function savedCatTemplate(cat) {
     return `
         <li class="saved-cat">
             <a href="detail.html?cat=${cat.id}">
-                <h2 class="">${cat.breeds[0].name}</h2>
+                <h2>${cat.breeds[0].name}</h2>
             </a>
             <button type="button" class="remove-cat" data-id="${cat.id}">X</button>
-            <a href="detail.html?cat=${cat.id}">
-                <img class="" src="${cat.url}" alt="Image of ${cat.breeds[0].name}">
+            <a href="detail.html?cat=${cat.id}" class="saved__img">
+                <img src="${cat.url}" alt="Image of ${cat.breeds[0].name}">
             </a>
         </li>`;
 }
@@ -56,7 +56,7 @@ export default class Saved {
         const savedCats = this.getSavedCats();
 
         if (savedCats.length == 0) {
-            this.listElement.innerHTML = `<p class="">You haven't purred to any cats!</p>`;
+            this.listElement.innerHTML = `<p class="saved__none">You haven't purred to any cats! Go to a <a href="listing.html">cat</a> and click on the heart to save</p>`;
         } else {
             renderListWithTemplate(savedCatTemplate, this.listElement, savedCats);
             this.addRemoveCatListeners();
